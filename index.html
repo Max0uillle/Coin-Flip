@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flip</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      .gringotts-bg {
+        background-color: #0c0a09; /* stone-950 */
+        /* Subtle texture using gradients to mimic stone walls */
+        background-image:
+          radial-gradient(circle at 15% 25%, rgba(120, 113, 108, 0.15) 0%, transparent 40%),
+          radial-gradient(circle at 85% 75%, rgba(87, 83, 78, 0.1) 0%, transparent 50%);
+      }
+      @keyframes pulse-gold {
+        0%, 100% {
+          border-color: #92400e; /* amber-800 */
+          box-shadow: 0 0 5px rgba(252, 211, 77, 0.2);
+        }
+        50% {
+          border-color: #fcd34d; /* amber-300 */
+          box-shadow: 0 0 15px rgba(252, 211, 77, 0.5);
+        }
+      }
+      .animate-pulse-gold {
+        animation: pulse-gold 2.5s infinite ease-in-out;
+      }
+      @keyframes score-increase {
+        0% { transform: scale(1); }
+        50% {
+          transform: scale(1.35);
+          color: #fde047; /* yellow-300 */
+          text-shadow: 0 0 10px rgba(253, 224, 71, 0.7);
+        }
+        100% { transform: scale(1); }
+      }
+      .animate-score-increase {
+        animation: score-increase 0.5s ease-out;
+      }
+      @keyframes new-record-glow {
+        0%, 100% {
+          transform: scale(1);
+          box-shadow: 0 0 8px rgba(252, 211, 77, 0.3);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 0 16px rgba(255, 255, 255, 0.8), 0 0 24px rgba(252, 211, 77, 0.6);
+        }
+      }
+      .animate-new-record {
+        animation: new-record-glow 1s ease-in-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="font-['EB_Garamond']">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
